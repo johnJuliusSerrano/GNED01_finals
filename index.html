@@ -593,7 +593,7 @@
         
         .puzzle-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 10px;
             max-width: 500px;
             margin: 0 auto;
@@ -613,6 +613,97 @@
         .puzzle-piece:hover {
             transform: scale(1.05);
             border-color: var(--accent);
+        }
+
+        /* Artist Perspectives */
+        .perspective-container {
+            background: linear-gradient(135deg, #f8f4e5, #fff9e6);
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .perspective-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .perspective-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .perspective-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .perspective-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .perspective-content {
+            padding: 30px;
+        }
+
+        .perspective-content h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .perspective-question {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .perspective-answer {
+            font-style: italic;
+            border-left: 4px solid var(--accent);
+            padding: 15px 20px;
+            background: rgba(252, 209, 22, 0.05);
+            margin: 20px 0;
+            font-size: 1.1rem;
+        }
+
+        .perspective-source {
+            text-align: right;
+            font-weight: 600;
+            color: var(--primary);
+            font-style: italic;
+        }
+
+        /* Blockquote styling */
+        blockquote {
+            font-style: italic;
+            border-left: 4px solid var(--accent);
+            padding: 15px 30px;
+            margin: 25px 0;
+            background: rgba(252, 209, 22, 0.1);
+            position: relative;
+        }
+        
+        blockquote::before {
+            content: """;
+            font-size: 4rem;
+            position: absolute;
+            left: 10px;
+            top: -20px;
+            color: rgba(179, 33, 52, 0.1);
+            font-family: Georgia, serif;
+        }
+        
+        blockquote footer {
+            display: block;
+            margin-top: 10px;
+            font-weight: 600;
+            color: var(--primary);
+            font-style: normal;
         }
         
         /* Footer */
@@ -756,6 +847,10 @@
             .team-members {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .perspective-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -787,6 +882,7 @@
                 <li><a href="#literary">Literary Works</a></li>
                 <li><a href="#political">Political Thought</a></li>
                 <li><a href="#legacy">Legacy</a></li>
+                <li><a href="#perspectives">Artist Voices</a></li>
                 <li><a href="#timeline">Timeline</a></li>
                 <li><a href="#quotes">Quotes</a></li>
                 <li><a href="#gallery">Gallery</a></li>
@@ -874,28 +970,28 @@
             </div>
         </section>
 
-	        <!-- Literary Works Section -->
+        <!-- Literary Works Section -->
         <section id="literary">
             <div class="section-title">
-                <h2>Literary Works in Performance Arts</h2>
+                <h2>Literary Foundations of Performance</h2>
             </div>
             <div class="section-content">
                 <div class="intro-grid">
                     <div class="intro-text">
                         <h3>Classic Works of Philippine Theater</h3>
-                        <p>Philippine performance arts are deeply rooted in rich literary traditions that combine indigenous storytelling with colonial influences and modern experimentation.</p>
+                        <p>Philippine performance arts are deeply rooted in literary traditions that blend indigenous storytelling with colonial influences and modern experimentation:</p>
                         
                         <h4>Walang Sugat (1902) by Severino Reyes</h4>
-                        <p>This zarzuela masterpiece combines romance and nationalism during the Philippine Revolution. It tells the story of lovers Tenyong and Julia against the backdrop of Spanish oppression, using theatrical conventions to subtly critique colonial rule while entertaining audiences.</p>
+                        <p>This zarzuela masterpiece combines romance and nationalism during the Philippine Revolution, using theatrical conventions to critique Spanish colonial rule while entertaining audiences.</p>
                         
                         <h4>Hinilawod (Ancient Epic)</h4>
-                        <p>One of the longest epics in Philippine literature, traditionally performed over several nights by Visayan chanters. This indigenous performance art preserves pre-colonial mythology, social values, and oral traditions through rhythmic verse and dramatic storytelling.</p>
+                        <p>Traditionally performed over several nights by Visayan chanters, this indigenous epic preserves pre-colonial mythology through rhythmic verse and dramatic storytelling.</p>
                         
-                        <h4>Ang Paglilitis ni Mang Serapio (1969) by Paul Dumol</h4>
-                        <p>A landmark in Philippine absurdist theater, this play critiques social inequality through the trial of a beggar by his own organization. Its symbolic performance style broke conventions of realist theater in the Philippines.</p>
+                        <h4>Contemporary Innovations</h4>
+                        <p>Modern works like <strong>Fun Home</strong> (staged in Manila in 2025) challenged societal norms by portraying LGBTQ+ narratives and complex family dynamics, proving theater's power to provoke reflection in conservative contexts.</p>
                     </div>
                     <div class="intro-image">
-                        <img src="zar.jpg" alt="Philippine Zarzuela Performance">
+                        <img src="zar.jpg" alt="Early Philippine Zarzuela Performance">
                         <div class="image-credit">Zarzuela performance, circa 1920s</div>
                     </div>
                 </div>
@@ -905,7 +1001,7 @@
         <!-- Political Thought Section -->
         <section id="political">
             <div class="section-title">
-                <h2>Political Thought in Performance Arts</h2>
+                <h2>Performance Arts as Political Voice</h2>
             </div>
             <div class="section-content">
                 <div class="intro-grid">
@@ -914,17 +1010,17 @@
                         <div class="image-credit">José Rizal, national hero of the Philippines</div>
                     </div>
                     <div class="intro-text">
-                        <h3>Rizal's Political Vision Through Theater</h3>
-                        <p>José Rizal, the Philippine national hero, used literature and performance as tools for political awakening during Spanish colonial rule. His works laid the foundation for using arts as instruments of social change.</p>
+                        <h3>From Colonial Resistance to Modern Advocacy</h3>
+                        <p>Performance arts have historically amplified political discourse:</p>
                         
-                        <h4>Reformist Ideals</h4>
-                        <p>Rizal advocated for peaceful reforms through his novels Noli Me Tangere and El Filibusterismo, which were later adapted into powerful theatrical productions. These works exposed abuses under Spanish rule while calling for education and civic participation among Filipinos.</p>
+                        <h4>Rizal's Revolutionary Influence</h4>
+                        <p>José Rizal's novels <em>Noli Me Tangere</em> and <em>El Filibusterismo</em> inspired theatrical adaptations that fueled anti-colonial sentiment, using allegory to evade censorship while critiquing Spanish oppression.</p>
                         
-                        <h4>Performance as Protest</h4>
-                        <p>Rizal's ideas inspired the Propaganda Movement's use of theater to promote nationalist sentiments. Plays like "Tanikalang Ginto" by Juan Abad (1902) continued this tradition, leading to the censorship of "seditious" performances by colonial authorities.</p>
+                        <h4>Martial Law & Modern Protests</h4>
+                        <p>During Ferdinand Marcos' regime, plays like <strong>Pagsambang Bayan</strong> (People's Worship) became covert tools for resistance. Contemporary works like <strong>Allegiance</strong> (2016) draw parallels between WWII Japanese internment camps and modern refugee crises. As Lea Salonga notes: <em>"Art holds a mirror to society – when rights are threatened, performance becomes protest"</em>.</p>
                         
-                        <h4>Legacy of Political Theater</h4>
-                        <p>This tradition evolved into the "protest theater" of the 1970s under martial law, where performance arts became a vital medium for expressing dissent and preserving democratic ideals despite government suppression.</p>
+                        <h4>Feminist Reclaiming</h4>
+                        <p>Nora Aunor's roles in films like <em>Minsa'y Isang Gamu-gamo</em> (1976) centered on marginalized women, challenging stereotypes and government policies through intimate human stories.</p>
                     </div>
                 </div>
             </div>
@@ -933,26 +1029,113 @@
         <!-- Legacy Section -->
         <section id="legacy">
             <div class="section-title">
-                <h2>Legacy of Filipino Performance Arts</h2>
+                <h2>Enduring Cultural Legacy</h2>
             </div>
             <div class="section-content">
                 <div class="intro-grid">
                     <div class="intro-text">
-                        <h3>Transforming Society Through Arts</h3>
-                        <p>Philippine performance arts have left an indelible mark on national identity and cultural development, serving as both mirror and catalyst for social change.</p>
+                        <h3>Shaping Filipino Identity</h3>
+                        <p>Performance arts have transformed society through:</p>
                         
                         <h4>Cultural Preservation</h4>
-                        <p>Traditional forms like the Pasyon (religious chant) and Komedya (folk drama) have preserved indigenous worldviews and historical narratives that might otherwise have been lost during centuries of colonization.</p>
+                        <p>Traditional forms like the <strong>Pasyon</strong> (religious chant) and <strong>Komedya</strong> (folk drama) preserved indigenous narratives during centuries of colonization.</p>
                         
                         <h4>National Identity Formation</h4>
-                        <p>The fusion of indigenous, Hispanic, and American influences in Philippine theater created a unique cultural synthesis that helped define modern Filipino identity, particularly during the post-colonial period.</p>
+                        <p>Nora Aunor's rise as a "morena superstar" revolutionized beauty standards, proving authentic Filipino representation resonated more than Westernized ideals. Her portrayals of working-class women gave dignity to everyday struggles.</p>
                         
-                        <h4>Contemporary Influence</h4>
-                        <p>Today's performance artists continue this legacy, addressing modern issues like migration, globalization, and human rights through experimental forms that maintain connections to traditional roots while engaging global audiences.</p>
+                        <blockquote>
+                            "Filipino women are strong, silent fighters. My job is to give them a voice and honor their experiences. - Nora Aunor"
+                        </blockquote>
+                        
+                        <h4>Digital Evolution</h4>
+                        <p>Initiatives like <strong>Musikapuluan 2025</strong> use digital platforms to teach traditional music to youth, ensuring art remains "a bridge between past and present". National Arts Month celebrations now feature TikTok kulintang tutorials alongside live performances.</p>
                     </div>
                     <div class="intro-image">
                         <img src="pa.jpg" alt="Contemporary Filipino Performance">
-                        <div class="image-credit">Modern reinterpretation of traditional forms</div>
+                        <div class="image-credit">Digital reinterpretation of traditional dance</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Artist Perspectives Section -->
+        <section id="perspectives">
+            <div class="section-title">
+                <h2>Artist / Art Scholar Perspectives</h2>
+            </div>
+            <div class="section-content">
+                <div class="perspective-container">
+                    <div class="perspective-header">
+                        <h3>Voices on Cultural and Political Impact</h3>
+                        <p>Insights from leading Filipino artists on the transformative power of performance</p>
+                    </div>
+                    
+                    <div class="perspective-grid">
+                        <div class="perspective-card">
+                            <div class="perspective-content">
+                                <h3>Lea Salonga</h3>
+                                <div class="perspective-question">
+					Perspective:
+                                </div>
+                                <div class="perspective-answer">
+                                    "Musical theatre, and the arts in general, have the power to reflect real societal struggles. It's crucial that artists tell stories that resonate with their communities and challenge norms. When we step on stage, we're not just entertaining—we're representing."
+                                </div>
+                                <div class="perspective-source">
+                                    - Tony Award-winning performer
+                                </div>
+                            </div>
+                        </div>
+			<div class="perspective-card">
+                            <div class="perspective-content">
+                                <h3>Dr. Patrick D. Flores</h3>
+                                <div class="perspective-question">
+                                    What role do the arts play in addressing cultural and political issues?
+                                </div>
+                                <div class="perspective-answer">
+                                    Perspective:
+Dr. Flores views performance art in the Philippines as a form of cultural resistance and political expression. He believes that it challenges dominant narratives by allowing artists to engage directly with audiences in real time. According to him, performance art blurs the line between art and life, making it a powerful tool for social critique and activism, especially during political unrest or social inequality.
+
+Opinion:
+"Performance art in the Philippines thrives in the tension between the personal and the political. It is a practice that foregrounds the body not only as a site of aesthetics but also of struggle and remembrance. In many ways, it reflects the nation's fractured yet resilient identity."                                </div>
+                                <div class="perspective-source">
+					- Art Historian, Professor, and Curator
+                                </div>
+                            </div>
+                        </div>
+
+			<div class="perspective-card">
+                            <div class="perspective-content">
+                                <h3>Prof. Lisa Ito-Tapang</h3>
+                                <div class="perspective-question">
+					Perspective:
+                                </div>
+                                <div class="perspective-answer">
+                                    Prof. Ito emphasizes performance art as a democratic and accessible medium that expands art beyond gallery spaces. She sees it as a means for marginalized voices—indigenous people, workers, women, and youth—to express their realities and aspirations in a participatory and immersive way.
+
+Opinion:
+“Filipino performance art, especially in public and grassroots settings, questions the elitism of traditional art forms. It invites engagement and encourages dialogue, turning spectators into witnesses, and sometimes, into participants of change.”
+                                </div>
+                                <div class="perspective-source">
+					- Writer, Art Critic, and Faculty at UP College of Fine Arts
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="perspective-card">
+                            <div class="perspective-content">
+                                <h3>Nora Aunor</h3>
+                                <div class="perspective-question">
+                                    You've portrayed many strong and complex Filipino women. How important is representation in your work?
+                                </div>
+                                <div class="perspective-answer">
+                                    "Filipino women are strong, silent fighters. They deserve to be seen on screen, not just as side characters, but as the heart of the story. My job is to give them a voice and honor their experiences."
+                                </div>
+                                <div class="perspective-source">
+                                    - National Artist for Film
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1163,7 +1346,7 @@
         </div>
         
         <div class="copyright">
-            <p>&copy; 2025 Tanghal: Filipino Performance Arts Journey GROUP 1. All rights reserved.</p>
+            <p>&copy; 2023 Tanghal: Filipino Performance Arts Journey. All rights reserved.</p>
         </div>
     </footer>
 
